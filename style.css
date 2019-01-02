@@ -1,0 +1,1645 @@
+/*generelt*/
+
+:root {
+    --pink: #d48ea1;
+    --grey: #6b6b6b;
+    --martel: 'Martel', serif;
+    --brunsvig: 'galleribrunsvig', sans-serif;
+}
+
+@font-face {
+    font-family: 'galleribrunsvig';
+    src: url('fonte/isocteur-webfont.woff2') format('woff2'),
+        url('fonte/isocteur-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+    font-family: 'Martel', serif;
+    height: 100vh;
+}
+
+h1 {
+    color: var(--grey);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.kanIkkeKlikke {
+    pointer-events: none;
+}
+
+.main_grid {
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 145px auto auto;
+    grid-gap: 0px;
+    /*    overflow: hidden;*/
+    min-height: 100vh;
+}
+
+header {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    overflow: hidden;
+}
+
+.index_container {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.galleri_container {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-columns: 5vw 45vw 45vw 5vw;
+    grid-template-rows: auto auto auto;
+}
+
+.kunstneren_container {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-columns: 5vw 90vw 5vw;
+    grid-template-rows: auto auto auto;
+}
+
+.kontakt_container {
+    display: grid;
+    grid-template-columns: 5vw 90vw 5vw;
+    grid-template-rows: auto auto auto;
+}
+
+footer {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-color: var(--grey);
+    display: grid;
+    grid-template-columns: 41% 1px 38% 1px 20%;
+    grid-template-rows: 20px auto 0px auto 20px auto auto 20px;
+    grid-gap: 0px;
+    justify-items: center;
+    align-self: end;
+}
+
+.logo {
+    margin-top: 45px;
+    margin-left: 18px;
+    min-width: 145px;
+    max-width: 380px;
+    width: 91%
+}
+
+.none {
+    display: none;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.pink {
+    color: var(--pink);
+}
+
+.white {
+    color: white;
+    font-size: 0.7em;
+}
+
+/*generelt SLUT*/
+/*menu mobil*/
+
+.menuklat_burger {
+    width: 85px;
+    position: fixed;
+    top: -6px;
+    right: 2px;
+    z-index: 2;
+}
+
+.menuklat_burger img {
+    width: 100%;
+}
+
+.menubutton {
+    width: 2em;
+    height: 2em;
+    padding: 0.6em;
+    /*background-color: red;*/
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+
+    position: fixed;
+    z-index: 3;
+    right: 27px;
+    top: 18px;
+    cursor: pointer;
+}
+
+.bar {
+    background-color: white;
+    width: 35px;
+    height: 2px;
+    transition: transform .5s;
+    transform-origin: center right;
+    z-index: 3;
+}
+
+.kryds .bar1 {
+    transform: rotate(-39deg);
+    transform-origin: center right;
+    z-index: 3;
+}
+
+.kryds .bar2 {
+    visibility: hidden;
+    z-index: 3;
+}
+
+.kryds .bar3 {
+    transform: rotate(39deg);
+    transform-origin: center right;
+    z-index: 3;
+}
+
+.hidden {
+    transform: scale(0);
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.29);
+    position: fixed;
+    z-index: 0;
+}
+
+nav {
+    transform: scale(1);
+    transition: transform .5s;
+    top: -38px;
+    right: 0px;
+    width: 250px;
+    position: fixed;
+    overflow: hidden;
+    /*    transform-origin: top right;*/
+    z-index: 2;
+}
+
+.menuklat_visning img {
+    width: 115%;
+}
+
+.menu_liste {
+    position: fixed;
+    top: 100px;
+    right: 40px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.6em;
+    text-align: center;
+    /*    font-weight: 600;*/
+    font-family: var(--brunsvig);
+    line-height: 1.3em;
+    z-index: 0;
+}
+
+.menu_liste li a:hover {
+    color: var(--grey);
+}
+
+.menu_aktiv {
+    color: var(--grey);
+}
+
+/*menu mobil SLUT*/
+
+/* index */
+.index_container img {
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+.index_billede {
+    background-image: url(img/me_and_my_associates_140x175.jpg);
+    background-size: 100%;
+    width: 100vw;
+    height: 136vw;
+}
+
+.tablet_index {
+    display: none;
+}
+
+.x {
+    display: none;
+}
+
+video {
+    width: auto;
+    height: 100%;
+}
+
+/* index SLUT*/
+
+/* galleri */
+
+.galleri_container h1 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.salg {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+.salg p,
+.ikke_salg p {
+    margin: 0;
+    text-align: center;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-family: var(--brunsvig);
+}
+
+.dropdown_salg {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+    margin-bottom: 15px;
+}
+
+.ikke_salg {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: center;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+.dropdown_ikke_salg {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: center;
+    margin-bottom: 15px;
+}
+
+.data-content {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.data-content p {
+    margin-left: 5vw;
+    margin-top: -10px;
+}
+
+.data-content h2 {
+    margin-left: 5vw;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.menu-item {
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    text-decoration: underline;
+}
+
+.filtrering_aktiv {
+    background-image: url(img/brush_pink.png);
+    background-size: 100%;
+    width: 40vw;
+    max-width: 200px;
+    height: 10.5vw;
+    max-height: 54px;
+    transition: 0.3s;
+    color: white;
+}
+
+.brush_button {
+    opacity: 0.7;
+}
+
+.sub-item {
+    cursor: pointer;
+}
+
+.sub-item:hover {
+    color: var(--pink);
+}
+
+.galleri_container img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.dropdown-container {
+    display: none;
+    padding-left: 8px;
+    transition: 0.3s;
+    font-family: var(--brunsvig);
+    line-height: 1.5em;
+}
+
+.active {
+    display: block;
+}
+
+/* galleri SLUT */
+
+/* kunstneren */
+.kunstneren_container h1 {
+    margin: 0;
+    margin-top: 15px;
+}
+
+.kunstneren_container p {
+    margin-top: 5px;
+}
+
+.tekst {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.billede {
+    background-image: url(img/mark_1.jpg);
+    background-size: 100%;
+    width: 100vw;
+    height: 100vw;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.billede:hover {
+    background-image: url(img/mark_2.jpg);
+}
+
+.citat p {
+    margin: 0;
+}
+
+.citat {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: var(--pink);
+    font-size: 1.1em;
+    display: grid;
+    grid-template-columns: 8vw auto 8vw;
+    grid-template-rows: 9vw auto 9vw;
+}
+
+.g1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    font-size: 3em;
+    font-weight: 900;
+    font-family: var(--brunsvig);
+}
+
+.g2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: 0;
+}
+
+.g3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    font-size: 3em;
+    font-weight: 900;
+    font-family: var(--brunsvig);
+}
+
+p.g3 {
+    margin-top: -20px;
+}
+
+/* kunstneren SLUT */
+
+/* kontakt */
+
+.kontakt_billede {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.kontakt_tekst {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.map {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.map iframe {
+    width: 100%;
+    height: 500px;
+    margin-bottom: -9px;
+}
+
+.kontakt_container img {
+    width: 100%;
+}
+
+.kontakt_container h1 {
+    margin: 0;
+}
+
+.kontakt_container p {
+    margin-top: 5px;
+}
+
+/* kontakt SLUT */
+
+/* footer */
+footer img {
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.adresse {
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.adresse2 {
+    display: none;
+}
+
+.streg1 {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.aabningstider {
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.aabningstider2 {
+    display: none;
+}
+
+.streg2 {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.facebook {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    width: 100%;
+    width: 35px;
+    height: 35px;
+    background-image: url(img/facebook_ikon_hvid.png);
+    background-size: 100%;
+}
+
+.facebook:hover {
+    background-image: url(img/facebook_ikon_pink.png);
+}
+
+.instagram {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    justify-self: center;
+    width: 100%;
+    width: 35px;
+    height: 35px;
+    background-image: url(img/instagram_ikon_hvid.png);
+    background-size: 100%;
+}
+
+.instagram:hover {
+    background-image: url(img/instagram_ikon_pink.png);
+}
+
+.some_footer {
+    display: none;
+}
+
+.telefon {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: left;
+    margin-left: 10px;
+}
+
+.telefon2 {
+    display: none;
+}
+
+.email {
+    grid-row-start: 7;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: left;
+    margin-left: 10px;
+}
+
+.email2 {
+    display: none;
+}
+
+.kontakt {
+    display: none;
+}
+
+/* footer SLUT */
+
+@media screen and (min-width: 420px) {
+    .email {
+        margin-left: 25px;
+    }
+
+    .telefon {
+        margin-left: 25px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .telefon {
+        grid-row-start: 6;
+        grid-row-end: 7;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        justify-self: left;
+        margin-left: 10px;
+        justify-self: center;
+    }
+
+    .email {
+        grid-row-start: 6;
+        grid-row-end: 7;
+        grid-column-start: 3;
+        grid-column-end: 6;
+        justify-self: left;
+        margin-left: 10px;
+        justify-self: center;
+    }
+
+    .data-content {
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+
+    .galleri_container img {
+        height: 250px;
+        width: auto;
+        margin: 0 10px;
+    }
+
+    .data-content h2 {
+        font-size: 0.95em;
+        margin: 0 0 0 10px;
+    }
+
+    .data-content p {
+        margin: 0 0 0 10px;
+        font-size: 0.7em;
+    }
+
+    .galleri_content {
+        margin-bottom: 30px;
+    }
+
+}
+
+@media screen and (min-width:650px) and (orientation: landscape) {
+    .index_billede {
+        background-image: url(img/120x170_akryl_paa_laerred.jpg);
+        background-size: 100%;
+        width: 101vw;
+        height: 76vw;
+        margin-left: -1vw;
+    }
+
+    .logo {
+        margin-top: 45px;
+        margin-left: 35px;
+        min-width: 345px;
+        max-width: 380px;
+        width: 91%
+    }
+
+    .kunstneren_container {
+        display: grid;
+        grid-template-columns: 5vw 90vw 5vw;
+        grid-template-rows: auto auto auto 40px;
+    }
+
+    .billede {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .citat {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        align-self: end;
+        margin: 0;
+        grid-template-rows: 25px auto 25px;
+        font-weight: 900;
+        width: 70%;
+    }
+
+    .kontakt_container {
+        grid-template-columns: 5vw 40vw 50vw 5vw;
+        grid-template-rows: auto 20px auto 30px;
+    }
+
+    .kontakt_billede {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    .map {
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+
+    .map iframe {
+        height: 400px;
+    }
+
+}
+
+@media screen and (min-width:700px) {
+
+    /*                MODAL visning */
+    #modal {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transition: 1s;
+        pointer-events: none;
+        overflow: scroll;
+        z-index: 10;
+        display: flex;
+    }
+
+    #modal-content {
+        margin: auto;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 2vw auto 2vw;
+        grid-template-rows: 2vw auto auto 2vw;
+        overflow: scroll;
+        width: 80%;
+        max-height: 90vh;
+    }
+
+    #modal-content img {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        max-width: 100%;
+        max-height: 75vh;
+    }
+
+    .modal_tekst {
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    #modal.show {
+        opacity: 1;
+        transition: 0.5s;
+        pointer-events: all;
+    }
+
+    #modal img {
+        width: 100%;
+        object-fit: scale-down;
+        margin-bottom: 10px;
+    }
+
+    #modal h2,
+    #modal p {
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+
+    .modal_knap {
+        width: 40px;
+        height: 40px;
+        background-color: var(--pink);
+        z-index: 15;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        justify-self: end;
+        border-radius: 50%;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .modal_knap:hover {
+        transform: scale(1.2);
+    }
+
+    .kryds_modal {
+        width: 30px;
+        height: 1px;
+        background-color: white;
+        transform-origin: center center;
+    }
+
+    .kryds_modal1 {
+        transform: rotate(45deg);
+    }
+
+    .kryds_modal2 {
+        transform: rotate(-90deg);
+    }
+}
+
+@media screen and (min-width:700px) and (orientation: landscape) {
+    #modal-content img {
+        max-height: 70vh;
+    }
+
+    #modal-content {
+        max-height: 95vh;
+    }
+}
+
+@media screen and (min-width:768px) {
+    /*footer*/
+
+    footer {
+        grid-template-columns: 23vw 1px 23vw 1px 42vw 1px auto;
+        grid-template-rows: 20px auto 0px auto 20px auto auto;
+        grid-gap: 0px;
+        justify-items: center;
+    }
+
+    .streg3 {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        grid-row-start: 2;
+        grid-row-end: 5;
+        grid-column-start: 6;
+        grid-column-end: 7;
+    }
+
+    .telefon,
+    .email {
+        display: none;
+    }
+
+    .kontakt {
+        display: block;
+        grid-row-start: 2;
+        grid-row-end: 5;
+        grid-column-start: 5;
+        grid-column-end: 6;
+    }
+
+    .facebook {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 7;
+        grid-column-end: 8;
+        width: 40%;
+        max-width: 35px;
+        max-height: 35px;
+    }
+
+    .instagram {
+        grid-row-start: 4;
+        grid-row-end: 5;
+        grid-column-start: 7;
+        grid-column-end: 8;
+        justify-self: center;
+        width: 40%;
+        max-width: 35px;
+        max-height: 35px;
+    }
+
+    /*footer SLUT*/
+    /*kunstneren*/
+    .kunstneren_container {
+        grid-template-columns: 7vw 80vw 7vw;
+        grid-template-rows: auto auto auto 40px;
+    }
+
+    .logo {
+        margin-left: 46px;
+        max-width: 400px;
+    }
+
+    .billede {
+        width: 86vw;
+        height: 86vw;
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+    }
+
+    .citat {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        /*    text-align: center;*/
+        margin-top: 365px;
+        margin-bottom: 0px;
+        color: var(--pink);
+        font-size: 1.5em;
+        display: grid;
+        grid-template-columns: 8vw 50vw 8vw;
+        grid-template-rows: 9vw auto 9vw;
+        font-weight: 800;
+    }
+
+    .citat p.g1 {
+        margin-top: 30px;
+        margin-left: 15px;
+    }
+
+    .citat p.g3 {
+        margin-top: -35px;
+    }
+
+    .main_grid {
+        grid-template-rows: 160px auto auto;
+    }
+
+    .kontakt_container {
+        grid-template-columns: 7vw 42vw 2vw 42vw 7vw;
+        grid-template-rows: auto auto auto;
+    }
+
+    .kontakt_billede {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        width: 86vw;
+    }
+
+    .kontakt_tekst {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        margin-top: 15px;
+    }
+
+    .map {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-top: 15px;
+    }
+
+    .map iframe {
+        width: 100%;
+        height: 350px;
+        margin-bottom: 20px;
+    }
+
+    .data-content {
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .galleri_container h1 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .ikke_salg {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .salg {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .galleri_container {
+        grid-template-columns: 5vw 200px 200px auto 5vw;
+        grid-template-rows: auto auto auto auto 10px;
+    }
+
+    .galleri_container img {
+        margin: 0 0 0 20px;
+    }
+
+    .data-content h2,
+    .data-content p {
+        margin: 0 0 0 20px;
+    }
+}
+
+@media screen and (min-width:950px) and (orientation: landscape) {
+    .index_billede {
+        display: none;
+    }
+
+    .kunstneren_container {
+        grid-template-columns: 5vw 37vw 3vw 50vw 5vw;
+        grid-template-rows: auto 0px auto 30px;
+    }
+
+    .kunstneren_container .tekst p {
+        margin-bottom: 0;
+    }
+
+    .billede {
+        width: 50vw;
+        height: 50vw;
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .citat {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 1em;
+        display: grid;
+        grid-template-columns: 3vw 31vw 3vw;
+        grid-template-rows: 2vw 120px 2vw;
+        font-weight: 800;
+    }
+
+    .citat p.g1 {
+        margin-top: -10px;
+        margin-left: -3px;
+    }
+
+    .citat p.g3 {
+        margin-top: -20px;
+        margin-left: -3px;
+    }
+
+    .tablet_index {
+        display: grid;
+        grid-template-columns: auto 40px 137px 10px 301px 10px 225px 10px 190px 15px auto;
+        grid-template-rows: 40px 51px 33px 106px 10px 105px 10px auto 30px;
+        margin-top: 5px;
+    }
+
+    .b1 {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        width: 137px
+    }
+
+    .b2 {
+        grid-row-start: 1;
+        grid-row-end: 5;
+        grid-column-start: 5;
+        grid-column-end: 6;
+        width: 301px;
+    }
+
+    .b3 {
+        grid-row-start: 2;
+        grid-row-end: 7;
+        grid-column-start: 7;
+        grid-column-end: 8;
+        width: 225px;
+    }
+
+    .b4 {
+        grid-row-start: 4;
+        grid-row-end: 7;
+        grid-column-start: 9;
+        grid-column-end: 10;
+        width: 190px;
+    }
+
+    .c4 {
+        display: none;
+    }
+
+    .b5 {
+        grid-row-start: 6;
+        grid-row-end: 9;
+        grid-column-start: 2;
+        grid-column-end: 6;
+        height: 339px;
+        width: 488px;
+        background-color: var(--grey);
+        overflow: hidden;
+    }
+
+    .b6 {
+        grid-row-start: 8;
+        grid-row-end: 9;
+        grid-column-start: 7;
+        grid-column-end: 11;
+    }
+
+    .kontakt_container {
+        grid-template-columns: 5vw auto 3vw 415px 5vw;
+        grid-template-rows: 277px 20px auto;
+    }
+
+    .map {
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 4;
+        grid-column-end: 5;
+        margin-top: 0;
+    }
+
+    .kontakt_tekst {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .kontakt_billede {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 4;
+        grid-column-end: 5;
+        width: 100%;
+    }
+
+    #modal-content {
+        width: 75%;
+    }
+
+    #modal-content img {
+        max-height: 65vh;
+    }
+}
+
+@media screen and (min-width:1050px) {
+    footer {
+        grid-template-columns: auto auto 1px auto 1px auto 1px auto 1px 13vw auto;
+        grid-template-rows: 20px auto;
+    }
+
+    footer p {
+        font-size: 0.8em;
+        line-height: 1.5em;
+    }
+
+    .adresse {
+        display: none;
+    }
+
+    .adresse2 {
+        display: block;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .streg1 {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+
+    .aabningstider {
+        display: none;
+    }
+
+    .aabningstider2 {
+        display: block;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 4;
+        grid-column-end: 5;
+    }
+
+    .streg2 {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 5;
+        grid-column-end: 6;
+    }
+
+    .telefon2 {
+        display: block;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 6;
+        grid-column-end: 7;
+    }
+
+    .telefon2 a:hover {
+        color: var(--pink);
+    }
+
+    .streg3 {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 7;
+        grid-column-end: 8;
+    }
+
+    .kontakt {
+        display: none;
+    }
+
+    .email2 {
+        display: block;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 8;
+        grid-column-end: 9;
+    }
+
+    .email2 a:hover {
+        color: var(--pink);
+    }
+
+    .streg4 {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 9;
+        grid-column-end: 10;
+    }
+
+    .some_footer {
+        display: flex;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 10;
+        grid-column-end: 11;
+        width: 60%;
+    }
+
+    .some_footer_facebook {
+        background-image: url(img/facebook_ikon_hvid.png);
+        background-size: 100%;
+        width: 35px;
+        height: 35px;
+        margin-right: 5px;
+    }
+
+    .some_footer_facebook:hover {
+        background-image: url(img/facebook_ikon_pink.png);
+    }
+
+    .some_footer_instagram {
+        background-image: url(img/instagram_ikon_hvid.png);
+        background-size: 100%;
+        width: 35px;
+        height: 35px;
+        margin-left: 5px;
+    }
+
+    .some_footer_instagram:hover {
+        background-image: url(img/instagram_ikon_pink.png);
+    }
+}
+
+@media screen and (min-width:1100px) {
+
+    .menuklat_burger {
+        display: none;
+    }
+
+    .menubutton {
+        display: none;
+    }
+
+    header {
+        justify-self: center;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 15% auto 15%;
+        grid-template-rows: 100%;
+    }
+
+    .logo_link {
+        justify-self: center;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .logo {
+        max-width: 1300px;
+        margin-left: 0;
+        width: 140%;
+        margin-top: 30px;
+    }
+
+    nav {
+        top: 10px;
+        left: 30px;
+        width: 250px;
+        position: fixed;
+    }
+
+    .menuklat_visning img {
+        width: 80%;
+    }
+
+    .menu_liste {
+        position: fixed;
+        top: 65px;
+        left: -55px;
+        font-size: 1.1em;
+        /*        font-weight: 600;*/
+        line-height: 1.5em;
+    }
+
+    .some_header {
+        justify-self: center;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        display: flex;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .facebook_header {
+        background-image: url(img/facebook_klat_grey.png);
+        background-size: 100%;
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .facebook_header:hover {
+        background-image: url(img/facebook_klat.png);
+    }
+
+    .instagram_header {
+        background-image: url(img/instagram_klat_grey.png);
+        background-size: 100%;
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .instagram_header:hover {
+        background-image: url(img/instagram_klat.png);
+    }
+
+    .menu_liste li a:hover {
+        color: var(--grey);
+    }
+
+    .menu_aktiv {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .kunstneren_container {
+        grid-template-columns: 233px 36vw 3vw 385px auto;
+        grid-template-rows: 310px 10px 190px 3vw;
+        margin-top: 50px;
+    }
+
+    .billede {
+        width: 385px;
+        height: 385px;
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .citat {
+        grid-template-columns: 3vw 31vw 3vw;
+        grid-template-rows: 2vw 120px 2vw;
+        font-weight: 700;
+        font-size: 1.1em;
+    }
+
+    .citat p.g1 {
+        margin-top: -10px;
+        margin-left: -3px;
+    }
+
+    .citat p.g3 {
+        margin-top: -20px;
+        margin-left: -3px;
+    }
+
+    .kontakt_container {
+        grid-template-columns: 233px 36vw 3vw 35vw auto;
+        grid-template-rows: auto 20px auto 3vw;
+        margin-top: 50px;
+    }
+
+    .kontakt_billede {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 100%;
+        margin-bottom: -10px;
+    }
+
+    .kontakt_tekst {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        margin-top: 0;
+    }
+
+    .kontakt_tekst h1 {
+        margin-top: 15px;
+    }
+
+    .map {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        align-self: end;
+        margin-bottom: -30px;
+    }
+
+    .map iframe {
+        width: 100%;
+        height: 280px;
+        margin-bottom: 20px;
+    }
+
+    .galleri_container {
+        grid-template-columns: 233px auto auto;
+        grid-template-rows: auto auto 3vw;
+        margin-top: 50px;
+    }
+
+    .salg {
+        position: fixed;
+        top: 300px;
+        left: 15px;
+    }
+
+    .dropdown_salg {
+        justify-self: center;
+        margin-bottom: 15px;
+        position: fixed;
+        top: 350px;
+        left: 63px;
+    }
+
+    .ikke_salg {
+        position: fixed;
+        left: 15px;
+        top: 350px;
+    }
+
+    .position2 {
+        top: 420px;
+    }
+
+    .dropdown_ikke_salg {
+        justify-self: start;
+        margin-bottom: 15px;
+        position: fixed;
+        left: 63px;
+        top: 400px;
+    }
+
+    .data-content {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 7;
+    }
+
+    .galleri_container h1 {
+        margin-bottom: 0;
+    }
+
+    .menu-item {
+        width: 200px;
+        height: 54px;
+    }
+
+
+    .galleri_container img {
+        margin: 0 20px 0 0;
+    }
+
+    .data-content h2,
+    .data-content p {
+        margin: 0 20px 0 0;
+    }
+
+    #modal-content {
+        width: 58%;
+    }
+
+    .tablet_index {
+        display: grid;
+        grid-template-columns: 15% 5vw 14.4vw 1vw 21.7vw 1vw 15.5vw 1vw 13.7vw 7.7vw auto;
+        grid-template-rows: 2vw 3.1vw 5.1vw 6.3vw 1vw 8.7vw 1vw 19.2vw 3vw;
+        margin-top: 20px;
+    }
+
+    .b1 {
+        grid-row-start: 2;
+        grid-row-end: 5;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        width: 100%;
+        height: 100%;
+    }
+
+    .b2 {
+        grid-row-start: 1;
+        grid-row-end: 5;
+        grid-column-start: 5;
+        grid-column-end: 6;
+        /*        width: 239px;*/
+        width: 100%;
+        height: 100%;
+    }
+
+    .b3 {
+        grid-row-start: 3;
+        grid-row-end: 7;
+        grid-column-start: 7;
+        grid-column-end: 8;
+        /*        width: 172px;*/
+        width: 100%;
+        height: 100%;
+    }
+
+    .b4 {
+        width: 100%;
+    }
+
+    .b5 {
+        grid-row-start: 6;
+        grid-row-end: 9;
+        grid-column-start: 2;
+        grid-column-end: 6;
+        width: 100%;
+        height: 100%;
+    }
+
+    .b6 {
+        grid-row-start: 8;
+        grid-row-end: 9;
+        grid-column-start: 7;
+        grid-column-end: 11;
+        /*        width: 440px;*/
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .kunstneren_container {
+        grid-template-columns: 233px 36vw 3vw 500px auto;
+        grid-template-rows: 310px 0px 170px auto 3vw;
+        margin-top: 50px;
+    }
+
+    .billede {
+        width: 500px;
+        height: 500px;
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 5;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+}
